@@ -1,8 +1,8 @@
 package com.anbetter.danmuku.model.collection;
 
-import android.graphics.Canvas;
-
 import com.anbetter.danmuku.view.IDanMuParent;
+
+import android.graphics.Canvas;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.locks.ReentrantLock;
@@ -59,6 +59,8 @@ public class DanMuConsumer extends Thread {
                     if (danMuViewParent != null && danMuViewParent.get() != null) {
                         danMuViewParent.get().lockDraw();
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 } finally {
                     lock.unlock();
                 }
